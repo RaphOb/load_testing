@@ -66,28 +66,20 @@ async def main(
 if __name__ == "__main__":
     # Paramètres de test
     env = "uat"
-    uat_url = "https://uat.api.veolia.com/hub-api/v1"
-    dev_url = "https://dev.api.veolia.com/hub-api/v1"
+    uat_url = "https://todo_uat"
+    dev_url = "https://todo_dev"
     local = "http://127.0.0.1:8000"
     base_url = dev_url if env == "dev" else uat_url if env == "uat" else local
-    # url = "http://127.0.0.1:8000/api/kpi_values/synthesis/campaign/5128eacf-a2e3-4a3a-b532-feb9a106b423/roadmap/d419d570-721a-45a2-8d28-0d8fd119f95e"
-    # url = "http://127.0.0.1:8000/api/kpi_values/synthesis/campaign/test/5128eacf-a2e3-4a3a-b532-feb9a106b423/roadmap/d419d570-721a-45a2-8d28-0d8fd119f95e"
-    # url = f"{base_url}/api/users/timothee.galpin@veolia.com.test-google-a.com"
-    url = f"{base_url}/api/users/autocomplete/evola"
-    # url = f"{base_url}/auto_complete"
-    # url = f"{base_url}/api/health"
+    url = f"{base_url}/todo"
     headers = {
-        "Authorization": "BEARER j4eHCQbq8PmoYc7tD2QtgvEwJWGT",
-        "x-hubapi-jwt": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4YmY1YzM3NzJkZDRlN2E3MjdhMTAxYmY1MjBmNjU3NWNhYzMyNmYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAyMzkxMTE2ODQ3Mzc1NTIwNTE2IiwiaGQiOiJ2ZW9saWEuY29tIiwiZW1haWwiOiJyYXBoYWVsLm9iYWRpYS5leHQuYWRtQHZlb2xpYS5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Ikg5SjFHUzdMSDNkXzRVM19TUndMZmciLCJpYXQiOjE3MTAzNjE0MzYsImV4cCI6MTcxMDM2NTAzNn0.iJas-6xvBIN9g0no1wMY7y4Y1qciTieKD35D8pGbu2IorlBm6q-NWqK0cqs5rsWidxtkyFXRsGnRAYkzroz4kMA5VwsliesZguiyDKtNgEHBX3nOJkKS-dv_zHRjpKmpC6-Go6w3W0mqWJ3fal9W2RKsqT7Q8ZZXODiPh6CguIpJfxD8xT9ZqV9MGqkq8YFjeLpaVMQQYWvJFsoYjfVkolyOM-ImMHe4oY3O0oCQCI_E3suaewur5iEiPxAIKuRVu9UA02md7KNfQ-WhWTwfe170d6DbmvxACNAawFnfdLefJPLft7rQOG_hZ2_tpYX9hF8AOL-xm7KegJ2duqRA6w",
+        "Authorization": "BEARER todo",
         "accept": "application/json",
-        "x-data-origin": "cache",
     }
-    # params = {"q": "test"}
     params = {}
 
     n_concur = 500
     n_requests = 2000
-    delay = 0.01
+    delay = 0.00
 
     # Lancement du test
     asyncio.run(main(url, headers, params, n_requests, delay, n_concur))
