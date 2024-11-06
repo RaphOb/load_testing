@@ -53,7 +53,7 @@ async def main(
             tasks = [
                 asyncio.create_task(
                     make_request_post(
-                        client, url_, headers_, params_, {"data": "prout"}
+                        client, url_, headers_, params_, data
                     )
                 )
                 for _ in range(req_)
